@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SwamiG Institute | Five Pathways of Initiatory Development</title>
+
+  <style>
+    :root {
+      --bg: #0f0b08;
+      --card: #1d1510;
+      --gold: #d4af37;
+      --soft-gold: #f2d27a;
+      --cream: #f8f0d8;
+      --brown: #5b351f;
+      --red: #7b1e1e;
+      --green: #24533b;
+      --blue: #203e5f;
+      --purple: #4b2a5f;
+      --border: rgba(212, 175, 55, 0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at top, rgba(212, 175, 55, 0.15), transparent 35%),
+        linear-gradient(180deg, #0f0b08 0%, #1a100b 100%);
+      color: var(--cream);
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    a {
+      color: var(--soft-gold);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #fff3bd;
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 25px;
+      padding: 14px;
+      background: rgba(15, 11, 8, 0.85);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 18px;
+    }
+
+    .topbar a {
+      padding: 8px 12px;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 999px;
+      font-size: 0.92rem;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .topbar .primary-link {
+      background: rgba(212, 175, 55, 0.18);
+      border-color: rgba(242, 210, 122, 0.75);
+      color: #fff3bd;
+      font-weight: bold;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 30px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 30px;
+    }
+
+    .logo-wrap {
+      margin-bottom: 18px;
+    }
+
+    .sgi-logo {
+      width: 125px;
+      max-width: 45vw;
+      height: auto;
+      border-radius: 50%;
+      border: 2px solid rgba(212, 175, 55, 0.65);
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+      background: #0f0b08;
+      padding: 6px;
+    }
+
+    header h1 {
+      color: var(--gold);
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    header h2 {
+      font-weight: normal;
+      color: var(--soft-gold);
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    .tagline {
+      font-style: italic;
+      color: #e8d9b5;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .gateway {
+      background:
+        linear-gradient(135deg, rgba(212, 175, 55, 0.17), rgba(123, 30, 30, 0.16)),
+        rgba(29, 21, 16, 0.96);
+      border: 2px solid rgba(242, 210, 122, 0.65);
+      border-radius: 24px;
+      padding: 30px;
+      margin-bottom: 34px;
+      box-shadow: 0 0 35px rgba(212, 175, 55, 0.18);
+      text-align: center;
+    }
+
+    .gateway .eyebrow {
+      color: var(--soft-gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
+    .gateway h2 {
+      color: var(--gold);
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .gateway p {
+      max-width: 900px;
+      margin: 0 auto 16px;
+    }
+
+    .gateway-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin: 24px 0;
+      text-align: left;
+    }
+
+    .gateway-item {
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 16px;
+      padding: 16px;
+      background: rgba(15, 11, 8, 0.55);
+    }
+
+    .gateway-item h3 {
+      color: var(--soft-gold);
+      margin-bottom: 6px;
+      font-size: 1.05rem;
+    }
+
+    .gateway-item p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: #e8d9b5;
+    }
+
+    .cta-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(242, 210, 122, 0.75);
+      background: rgba(212, 175, 55, 0.18);
+      color: #fff3bd;
+      font-weight: bold;
+    }
+
+    .cta.secondary {
+      background: rgba(255,255,255,0.05);
+      font-weight: normal;
+    }
+
+    .intro {
+      background: rgba(29, 21, 16, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.35);
+    }
+
+    .intro h2 {
+      color: var(--gold);
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .pathways {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+      margin-bottom: 35px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(45, 31, 22, 0.98), rgba(22, 14, 10, 0.98));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      min-height: 330px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 6px;
+      width: 100%;
+      background: var(--gold);
+    }
+
+    .card.devotion::before { background: var(--green); }
+    .card.power::before { background: var(--red); }
+    .card.wisdom::before { background: var(--blue); }
+    .card.royalty::before { background: var(--purple); }
+    .card.ancestors::before { background: var(--gold); }
+
+    .number {
+      color: var(--soft-gold);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      color: var(--gold);
+      font-size: 1.45rem;
+      margin-bottom: 10px;
+    }
+
+    .card h4 {
+      color: var(--soft-gold);
+      font-weight: normal;
+      margin-bottom: 14px;
+      font-size: 1rem;
+    }
+
+    .card p {
+      margin-bottom: 12px;
+    }
+
+    .keywords {
+      margin-top: 15px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(212, 175, 55, 0.25);
+      font-size: 0.95rem;
+      color: #ead9aa;
+    }
+
+    .card-links {
+      margin-top: auto;
+      padding-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .card-links a {
+      display: inline-block;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      background: rgba(212, 175, 55, 0.08);
+      font-size: 0.85rem;
+    }
+
+    .matrix {
+      background: rgba(15, 11, 8, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 25px;
+      margin-bottom: 35px;
+      overflow-x: auto;
+    }
+
+    .matrix h2 {
+      text-align: center;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+
+    th, td {
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: rgba(212, 175, 55, 0.16);
+      color: var(--soft-gold);
+    }
+
+    td {
+      background: rgba(255,255,255,0.03);
+    }
+
+    .asset-grid {
+      background: rgba(29, 21, 16, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 25px;
+      margin-bottom: 35px;
+    }
+
+    .asset-grid h2 {
+      text-align: center;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+
+    .asset-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 12px;
+    }
+
+    .asset-links a {
+      display: block;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 14px;
+      padding: 14px;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .asset-links span {
+      display: block;
+      color: #d8c998;
+      font-size: 0.88rem;
+      margin-top: 4px;
+    }
+
+    .closing {
+      text-align: center;
+      background: linear-gradient(135deg, rgba(91, 53, 31, 0.8), rgba(15, 11, 8, 0.95));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+
+    .closing h2 {
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .footer {
+      text-align: center;
+      color: #c7b98e;
+      font-size: 0.9rem;
+      padding: 25px 20px;
+      border-top: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .footer-logo {
+      width: 70px;
+      height: auto;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      padding: 4px;
+    }
+
+    .footer strong {
+      color: var(--gold);
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 12px;
+      }
+
+      header h1 {
+        font-size: 1.9rem;
+      }
+
+      .gateway h2 {
+        font-size: 1.55rem;
+      }
+
+      .card {
+        min-height: auto;
+      }
+
+      .topbar {
+        gap: 8px;
+      }
+
+      .topbar a {
+        font-size: 0.84rem;
+        padding: 7px 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- 
+      Place the SGI logo image in the same repo/folder as this index.html.
+      Suggested filename: sgi-logo.png
+      If your actual logo has a different name, change both image src values below.
+    -->
+
+    <nav class="topbar" aria-label="SGI Digital Asset Navigation">
+      <a class="primary-link" href="#divination-gateway">Need a Divination?</a>
+      <a href="https://swamiginstitute.com" target="_blank" rel="noopener">SGI Main Site</a>
+      <a href="https://4cowrieshell.com" target="_blank" rel="noopener">Four Cowrie</a>
+      <a href="https://warriors2026.com" target="_blank" rel="noopener">Warriors</a>
+      <a href="https://myopele.com" target="_blank" rel="noopener">Opele</a>
+      <a href="https://16cowrie.com" target="_blank" rel="noopener">Merindilogun</a>
+      <a href="https://iamaborisha.com" target="_blank" rel="noopener">Obi Orisha</a>
+      <a href="https://iyawo.swamiginstitute.com" target="_blank" rel="noopener">Iyawo Track</a>
+      <a href="https://ifamystictemple.com" target="_blank" rel="noopener">Ifa Mystic Temple</a>
+    </nav>
+
+    <header>
+      <div class="logo-wrap">
+        <a href="https://swamiginstitute.com" target="_blank" rel="noopener">
+          <img src="sgi-logo.png" alt="SwamiG Institute Logo" class="sgi-logo" />
+        </a>
+      </div>
+
+      <h1>SwamiG Institute</h1>
+      <h2>Five Pathways of Initiatory Development</h2>
+
+      <p class="tagline">
+        The seeker’s first step is divination. Through divination the pathway is
+        clarified, the Orisha is revealed, the Odu speaks, the Khemetian powers
+        are identified, and the incarnation objective is brought into focus.
+      </p>
+    </header>
+
+    <section id="divination-gateway" class="gateway">
+      <div class="eyebrow">First Gateway for Seekers</div>
+
+      <h2>Need a Divination?</h2>
+
+      <p>
+        Before entering any SGI pathway, the seeker is directed first to divination.
+        Divination establishes spiritual orientation and prevents the student from
+        choosing a path by personality, curiosity, or emotion alone.
+      </p>
+
+      <p>
+        The reading helps identify the sacred forces already governing the seeker’s
+        life and clarifies which SGI pathway should receive first attention.
+      </p>
+
+      <div class="gateway-grid">
+        <div class="gateway-item">
+          <h3>A) Orisha Alignment</h3>
+          <p>
+            Identifies the Orisha forces guiding, protecting, challenging, or calling
+            the seeker toward initiation, devotion, discipline, or service.
+          </p>
+        </div>
+
+        <div class="gateway-item">
+          <h3>B) Odu Guidance</h3>
+          <p>
+            Reveals the governing Odu, its blessings, warnings, taboos, remedies,
+            and the spiritual instructions needed for the next stage of life.
+          </p>
+        </div>
+
+        <div class="gateway-item">
+          <h3>C) Khemetian Deities</h3>
+          <p>
+            Clarifies the Khemetian divine principles active in the seeker’s
+            consciousness, destiny, character development, and sacred work.
+          </p>
+        </div>
+
+        <div class="gateway-item">
+          <h3>D) Incarnation Objectives</h3>
+          <p>
+            Brings focus to why the soul is here, what lessons must be mastered,
+            and how the seeker may align personal life with divine assignment.
+          </p>
+        </div>
+      </div>
+
+      <p>
+        From this first divination, the seeker may be directed toward Devotion,
+        Words of Power, Wisdom, Royalty, or Ancestral Continuity.
+      </p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://swamiginstitute.com" target="_blank" rel="noopener">
+          Begin with Divination
+        </a>
+
+        <a class="cta secondary" href="https://4cowrieshell.com" target="_blank" rel="noopener">
+          Explore Four Cowrie
+        </a>
+
+        <a class="cta secondary" href="https://ifamystictemple.com" target="_blank" rel="noopener">
+          Visit Ifa Mystic Temple
+        </a>
+      </div>
+    </section>
+
+    <section class="intro">
+      <h2>The Fivefold Initiatory Map</h2>
+
+      <p>
+        SwamiG Institute organizes spiritual education through five sacred
+        pathways. The seeker does not merely select a pathway; the pathway is
+        clarified through divination.
+      </p>
+
+      <p>
+        Four pathways correspond to the families and movement of Four Cowrie
+        Divination, while the fifth pathway crowns the system through ancestral
+        inheritance, royal responsibility, and enlightened continuity.
+      </p>
+
+      <p>
+        Each pathway serves as a gate of development for Iyawos, Aborishas,
+        devotees, and initiates seeking to mature spiritually, ritually, and morally.
+      </p>
+    </section>
+
+    <section class="pathways">
+
+      <article class="card devotion">
+        <div class="number">Pathway One</div>
+        <h3>Devotion</h3>
+        <h4>Ilekes / Auset / Yemojah</h4>
+
+        <p>
+          The path of devotion begins with humility, reverence, emotional cleansing,
+          and sacred relationship. This pathway prepares the heart to receive
+          spiritual instruction.
+        </p>
+
+        <p>
+          Divination may direct the seeker here when the Orisha, Odu, Khemetian
+          powers, or incarnation objective call for purification, sweetness,
+          ancestral belonging, or devotional discipline.
+        </p>
+
+        <div class="keywords">
+          Keywords: devotion, cleansing, humility, ilekes, sweetness, receptivity.
+        </div>
+
+        <div class="card-links">
+          <a href="https://swamiginstitute.com" target="_blank" rel="noopener">SGI</a>
+          <a href="https://iyawo.swamiginstitute.com" target="_blank" rel="noopener">Iyawo Track</a>
+          <a href="https://qmmaat.com" target="_blank" rel="noopener">Queen Mother Maat</a>
+        </div>
+      </article>
+
+      <article class="card power">
+        <div class="number">Pathway Two</div>
+        <h3>Words of Power</h3>
+        <h4>Warriors / Sekert / Olokun</h4>
+
+        <p>
+          The path of power teaches the initiate how to speak, act, defend, and
+          stand with spiritual authority. Here the student learns that words are
+          weapons, vows are contracts, and discipline is protection.
+        </p>
+
+        <p>
+          Divination may direct the seeker here when protection, vow correction,
+          boundary formation, deep-water mysteries, or disciplined sacred speech
+          are central to the seeker’s next step.
+        </p>
+
+        <div class="keywords">
+          Keywords: warriors, vows, protection, command, discipline, sacred speech.
+        </div>
+
+        <div class="card-links">
+          <a href="https://warriors2026.com" target="_blank" rel="noopener">Warriors 2026</a>
+          <a href="https://ifamystictemple.com" target="_blank" rel="noopener">Ifa Mystic Temple</a>
+        </div>
+      </article>
+
+      <article class="card wisdom">
+        <div class="number">Pathway Three</div>
+        <h3>Wisdom</h3>
+        <h4>Hand of Ifa / Tehuti / Orunmila</h4>
+
+        <p>
+          The path of wisdom develops spiritual intelligence, interpretation,
+          divination, study, and alignment with destiny. The student learns to
+          read signs, patterns, Odu, and sacred instruction.
+        </p>
+
+        <p>
+          Divination may direct the seeker here when the incarnation objective
+          requires study, destiny alignment, Odu literacy, interpretive skill, or
+          disciplined access to sacred knowledge.
+        </p>
+
+        <div class="keywords">
+          Keywords: Ifa, divination, Odu, study, destiny, interpretation.
+        </div>
+
+        <div class="card-links">
+          <a href="https://4cowrieshell.com" target="_blank" rel="noopener">Four Cowrie</a>
+          <a href="https://myopele.com" target="_blank" rel="noopener">Opele</a>
+          <a href="https://16cowrie.com" target="_blank" rel="noopener">Merindilogun</a>
+        </div>
+      </article>
+
+      <article class="card royalty">
+        <div class="number">Pathway Four</div>
+        <h3>Royalty</h3>
+        <h4>Priesthood / Crowning / Sacred Character</h4>
+
+        <p>
+          The path of royalty teaches the initiate to embody dignity, restraint,
+          service, and sacred leadership. Royalty is not vanity; it is the burden
+          of representing the divine with character.
+        </p>
+
+        <p>
+          Divination may direct the seeker here when the Orisha, Odu, or
+          incarnation objective indicates priesthood, public responsibility,
+          leadership, crowning, or sacred accountability.
+        </p>
+
+        <div class="keywords">
+          Keywords: priesthood, crowning, leadership, dignity, service, character.
+        </div>
+
+        <div class="card-links">
+          <a href="https://iamaborisha.com" target="_blank" rel="noopener">Obi Orisha</a>
+          <a href="https://iyawo.swamiginstitute.com" target="_blank" rel="noopener">Iyawo Track</a>
+          <a href="https://swamiginstitute.com" target="_blank" rel="noopener">SGI Main Site</a>
+        </div>
+      </article>
+
+      <article class="card ancestors">
+        <div class="number">Pathway Five</div>
+        <h3>On Enlightened Shoulders</h3>
+        <h4>Ancestral Continuity / Royal Legacy</h4>
+
+        <p>
+          The fifth pathway gathers the first four and places them upon the
+          shoulders of enlightened ancestors. It is the path of remembrance,
+          inheritance, lineage, and responsibility to those who came before.
+        </p>
+
+        <p>
+          Divination may direct the seeker here when ancestral obligation, lineage,
+          name, royal inheritance, spiritual legacy, or elder accountability becomes
+          the central organizing force.
+        </p>
+
+        <div class="keywords">
+          Keywords: ancestors, lineage, legacy, elevation, remembrance, continuity.
+        </div>
+
+        <div class="card-links">
+          <a href="https://swamiginstitute.com" target="_blank" rel="noopener">Royal Legacy</a>
+          <a href="https://ifamystictemple.com" target="_blank" rel="noopener">Temple</a>
+          <a href="https://iyafalanlu.com" target="_blank" rel="noopener">Iya Falanlu</a>
+        </div>
+      </article>
+
+    </section>
+
+    <section class="matrix">
+      <h2>Divination-to-Pathway Correspondence Table</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>First Reading Reveals</th>
+            <th>Spiritual Question Answered</th>
+            <th>Possible Pathway Direction</th>
+            <th>SGI Digital Asset</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Orisha</td>
+            <td>Which divine force is guiding, protecting, correcting, or calling the seeker?</td>
+            <td>Devotion, Words of Power, Royalty, or deeper Orisha service.</td>
+            <td>
+              <a href="https://iamaborisha.com" target="_blank" rel="noopener">Obi Orisha</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Odu</td>
+            <td>What sacred pattern, warning, blessing, taboo, or instruction governs the moment?</td>
+            <td>Wisdom, divination study, Four Cowrie, Opele, or Merindilogun.</td>
+            <td>
+              <a href="https://4cowrieshell.com" target="_blank" rel="noopener">Four Cowrie</a> /
+              <a href="https://myopele.com" target="_blank" rel="noopener">Opele</a> /
+              <a href="https://16cowrie.com" target="_blank" rel="noopener">Merindilogun</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Khemetian Deities</td>
+            <td>Which divine principles are shaping the seeker’s consciousness and character?</td>
+            <td>Auset/Yemojah, Sekert/Olokun, Tehuti/Orunmila, or royal priesthood formation.</td>
+            <td>
+              <a href="https://swamiginstitute.com" target="_blank" rel="noopener">SGI Main Site</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Incarnation Objectives</td>
+            <td>Why is the soul here, and what must be mastered in this lifetime?</td>
+            <td>The pathway most aligned with destiny, discipline, and divine assignment.</td>
+            <td>
+              <a href="https://ifamystictemple.com" target="_blank" rel="noopener">Ifa Mystic Temple</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="matrix">
+      <h2>Pathway Correspondence Table</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Pathway</th>
+            <th>Initiatory Form</th>
+            <th>Khemetic Power</th>
+            <th>Ifa / Orisha Alignment</th>
+            <th>Primary Function</th>
+            <th>SGI Digital Asset</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>1. Devotion</td>
+            <td>Ilekes</td>
+            <td>Auset</td>
+            <td>Yemojah</td>
+            <td>Emotional cleansing, humility, sweetness, and sacred belonging.</td>
+            <td>
+              <a href="https://iyawo.swamiginstitute.com" target="_blank" rel="noopener">
+                Iyawo Track
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>2. Words of Power</td>
+            <td>Warriors</td>
+            <td>Sekert</td>
+            <td>Olokun</td>
+            <td>Protection, vows, discipline, speech, and spiritual force.</td>
+            <td>
+              <a href="https://warriors2026.com" target="_blank" rel="noopener">
+                Warriors 2026
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>3. Wisdom</td>
+            <td>Hand of Ifa</td>
+            <td>Tehuti</td>
+            <td>Orunmila</td>
+            <td>Divination, interpretation, destiny, and sacred study.</td>
+            <td>
+              <a href="https://myopele.com" target="_blank" rel="noopener">Opele</a> /
+              <a href="https://16cowrie.com" target="_blank" rel="noopener">Merindilogun</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>4. Royalty</td>
+            <td>Priesthood / Crowning</td>
+            <td>Sacred Kingship</td>
+            <td>Orisha Authority</td>
+            <td>Leadership, public responsibility, dignity, and character.</td>
+            <td>
+              <a href="https://iamaborisha.com" target="_blank" rel="noopener">
+                Obi Orisha
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>5. On Enlightened Shoulders</td>
+            <td>Ancestral Completion</td>
+            <td>Royal Legacy</td>
+            <td>Egungun / Lineage</td>
+            <td>Remembrance, continuity, elevation, and ancestral accountability.</td>
+            <td>
+              <a href="https://swamiginstitute.com" target="_blank" rel="noopener">
+                SwamiG Institute
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="asset-grid">
+      <h2>SGI Digital Asset Portal</h2>
+
+      <div class="asset-links">
+        <a href="#divination-gateway">
+          Need a Divination?
+          <span>First gateway for seekers before choosing a pathway.</span>
+        </a>
+
+        <a href="https://swamiginstitute.com" target="_blank" rel="noopener">
+          SwamiG Institute
+          <span>Main institute home and central digital hub.</span>
+        </a>
+
+        <a href="https://4cowrieshell.com" target="_blank" rel="noopener">
+          Four Cowrie Shell
+          <span>Four Cowrie divination lessons and foundational orientation.</span>
+        </a>
+
+        <a href="https://warriors2026.com" target="_blank" rel="noopener">
+          Warriors 2026
+          <span>Warrior initiation preparation and sacred accountability.</span>
+        </a>
+
+        <a href="https://myopele.com" target="_blank" rel="noopener">
+          My Opele
+          <span>Opele study, Ifa orientation, and divination development.</span>
+        </a>
+
+        <a href="https://16cowrie.com" target="_blank" rel="noopener">
+          16 Cowrie / Merindilogun
+          <span>Merindilogun and 20-4 divination training pathway.</span>
+        </a>
+
+        <a href="https://iamaborisha.com" target="_blank" rel="noopener">
+          I Am Aborisha
+          <span>Obi Orisha / Orisha-Pele initiatory development.</span>
+        </a>
+
+        <a href="https://iyawo.swamiginstitute.com" target="_blank" rel="noopener">
+          Iyawo Track
+          <span>Iyawo spiritual curriculum and post-mat development.</span>
+        </a>
+
+        <a href="https://ifamystictemple.com" target="_blank" rel="noopener">
+          Ifa Mystic Temple
+          <span>Temple identity, sacred community, and lineage presence.</span>
+        </a>
+
+        <a href="https://qmmaat.com" target="_blank" rel="noopener">
+          Queen Mother Maat
+          <span>Priestess, Khemetian yoga, and sacred feminine teaching.</span>
+        </a>
+
+        <a href="https://iyafalanlu.com" target="_blank" rel="noopener">
+          Iya Falanlu
+          <span>Iyanifa, Oshun priestess, and meditative teaching.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="closing">
+      <h2>Institute Declaration</h2>
+
+      <p>
+        SwamiG Institute begins with divination and develops initiates through
+        devotion, power, wisdom, royalty, and ancestral elevation. These five
+        pathways form a sacred map for those who seek not only knowledge, but
+        transformation.
+      </p>
+
+      <p>
+        <strong>
+          Extending Royal Legacy. On the shoulders of enlightened ancestors.
+        </strong>
+      </p>
+    </section>
+
+    <footer class="footer">
+      <a href="https://swamiginstitute.com" target="_blank" rel="noopener">
+        <img src="sgi-logo.png" alt="SwamiG Institute Logo" class="footer-logo" />
+      </a>
+
+      <p>
+        <strong>SwamiG Institute</strong><br />
+        Copyright © 2026 SwamiG Institute. All rights reserved.
+      </p>
+
+      <p>
+        <a href="#divination-gateway">Need a Divination?</a> |
+        <a href="https://swamiginstitute.com" target="_blank" rel="noopener">Main Site</a> |
+        <a href="https://4cowrieshell.com" target="_blank" rel="noopener">Four Cowrie</a> |
+        <a href="https://warriors2026.com" target="_blank" rel="noopener">Warriors</a> |
+        <a href="https://myopele.com" target="_blank" rel="noopener">Opele</a> |
+        <a href="https://16cowrie.com" target="_blank" rel="noopener">Merindilogun</a> |
+        <a href="https://iamaborisha.com" target="_blank" rel="noopener">Obi Orisha</a>
+      </p>
+    </footer>
+
+  </div>
+</body>
+</html>
